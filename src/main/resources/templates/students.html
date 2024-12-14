@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Student List</title>
+</head>
+<body>
+<h2>Student List</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="student : ${students}">
+        <td th:text="${student.name}"></td>
+        <td th:text="${student.email}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<!-- Кнопка отправки письма -->
+<form action="/sendEmail" method="get">
+    <button type="submit">Send</button>
+</form>
+</body>
+</html>
